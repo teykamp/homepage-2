@@ -1,18 +1,12 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <CardAnimationWrapper class="mt-6 ml-6">
+      <template #card-content>
+      </template>
+    </CardAnimationWrapper>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+<script setup lang="ts">
+import CardAnimationWrapper from '../components/CardAnimationWrapper.vue';
 </script>

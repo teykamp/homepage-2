@@ -1,26 +1,19 @@
 <template>
-  <v-app>
-    <v-main>
-      <HelloWorld/>
-    </v-main>
+  <v-app class="bg">
+    <RouterView />
   </v-app>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+<script setup lang="ts">
 
-export default defineComponent({
-  name: 'App',
-
-  components: {
-    HelloWorld,
-  },
-
-  data () {
-    return {
-      //
-    }
-  },
-})
 </script>
+
+<style scoped>
+.bg {
+  background: #181818;
+  background-image: radial-gradient(rgb(65, 64, 64) 10%, transparent 10.01%);
+  background-size: 20px 20px;
+  height: 100vh; 
+  width: 100%;
+}
+</style>
