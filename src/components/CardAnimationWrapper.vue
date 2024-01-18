@@ -56,7 +56,6 @@ const handleMouseMove = (event: any) => {
 }
 
 const computedOpacity = computed(() => showHover.value ? 1 : 0)
-const computedTransitionDuration = computed(() => showHover.value ? '0' : '250ms')
 const computedHoverEffect = computed(() => props.format.hoverEffect ? 'scale(1.02)' : '')
 
 </script>
@@ -73,7 +72,8 @@ const computedHoverEffect = computed(() => props.format.hoverEffect ? 'scale(1.0
 }
 .gradient {
   background: linear-gradient(rgba(255, 255, 255, 0), rgb(144, 104, 167), rgba(255, 255, 255, 0));
-  transition-duration: v-bind(computedTransitionDuration);
   opacity: v-bind(computedOpacity);
+  transition: opacity;
+  transition-duration: 550ms;
 }
 </style>
