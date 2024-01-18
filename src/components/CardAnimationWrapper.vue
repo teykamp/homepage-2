@@ -20,6 +20,7 @@
         left: '0',
         height: '200px',
         width: '2px',
+        'z-index': '999',
       }"
       ></div>
     <slot name="card-content"></slot>
