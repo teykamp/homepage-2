@@ -1,54 +1,58 @@
 <template>
   <div 
-    ref="container"
-    :style="{
-      background: '#181818',
-      width: '300px',
-    }"
+    style="height: 50px; background: #181818; border-bottom: 1px solid rgb(92, 92, 92);" 
+    class="d-flex"
   >
-    <div
-      v-for="(route, index) in routes"
-      :key="index"
-      @click="router.push({name: route.name})"
-      @mouseenter="hoverIndex = index"
-      @mouseleave="hoverIndex = -1"
-      class="text-uppercase route-link"
-      :style="{
-        'font-style': getFontStyle(route, index),
-        'color': route.name === currentRoute.name ? 'white' : '#363636',
-        'font-weight': hoverIndex === index ? '' : 'light',
-        display: 'block',
-        'text-align': 'right',
-        'font-size': '50px',
-        'font-family': 'Inter',
-        position: 'relative',
-        'margin-right': '10px',
-      }"
-    >
-    {{ route.name }}
+    <div style=" height: 100%; width: 10%;" class="d-flex align-center">
+      <div>logo here</div>
+    </div>
+    <div style=" height: 100%; width: 60%; border-right: 1px solid rgb(92, 92, 92);" class="d-flex align-center justify-center">
+      <div
+        v-for="(route, index) in routes"
+        :key="index"
+      >{{ route.name }}</div>
+    </div>
+    <div style=" height: 100%; width: 20%; border-right: 1px solid rgb(92, 92, 92);" class="d-flex align-center justify-space-around">
+      <v-btn
+        v-for="(link, key) in socialLinks"
+        :key="key"
+        :icon="link.icon"
+        variant="tonal"
+        size="sm"
+      ></v-btn>
+    </div>
+    <div style=" height: 100%; width: 10%;" class="d-flex align-center">
+      <v-btn
+        variant="tonal"
+      >contact me</v-btn>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import CardAnimationWrapper from './CardAnimationWrapper.vue';
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const routes = ref(router.options.routes)
-const currentRoute = ref(router.currentRoute)
-const hoverIndex = ref(-1)
 
-const getFontStyle = (route: any, index: number) => {
-  if (currentRoute.value.name === route.name) return 'italic'
-  if (hoverIndex.value === index) return 'italic'
+const socialLinks = ref({
+  linkedin: {
+    icon: 'mdi-linkedin',
+    link: '',
+  },
+  github: {
+    icon: 'mdi-github',
+    link: '',
+  },
+  email: {
+    icon: 'mdi-email',
+    link: '',
+  }
+})
 
-}
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-.route-link:hover {
-  cursor: pointer;
-}
 </style>

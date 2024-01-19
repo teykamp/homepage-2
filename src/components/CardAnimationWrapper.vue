@@ -8,7 +8,7 @@
       :style="{
         overflow: 'hidden',
         position: 'relative',
-        border: props.format.border ? '2px solid rgb(92, 92, 92)' : '',
+        border: props.format.border ? '1px solid rgb(92, 92, 92)' : '',
       }"
     >
     <div

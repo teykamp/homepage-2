@@ -1,18 +1,6 @@
 <template>
   <div>
 
-    <CardAnimationWrapper
-      :format="{
-        borderAnimation: true,
-        border: true,
-        hoverEffect: false
-      }"
-    >
-      <template #card-content>
-        <NavCardVue />
-      </template>
-    </CardAnimationWrapper>
-
   </div>
 </template>
 
