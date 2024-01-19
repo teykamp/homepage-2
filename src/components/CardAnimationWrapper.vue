@@ -4,7 +4,7 @@
       @mouseenter="showHover = true"
       @mouseleave="showHover = false"
       @mousemove="handleMouseMove"
-      class="card text-white"
+      class="card text-white rounded-sm"
       :style="{
         overflow: 'hidden',
         position: 'relative',
@@ -24,7 +24,6 @@
       }"
       ></div>
     <slot name="card-content"></slot>
-    {{ mouseY }}
     </v-sheet>
   </div>
 </template>
