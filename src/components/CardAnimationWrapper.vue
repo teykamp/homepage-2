@@ -23,7 +23,7 @@
         'z-index': '999',
       }"
       ></div>
-    <slot name="card-content"></slot>
+    <slot name="content"></slot>
     </v-sheet>
   </div>
 </template>

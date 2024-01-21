@@ -1,5 +1,6 @@
 <template>
-  <div 
+  <div
+    v-if="lgAndUp"
     style="height: 80px; background: #181818; border-bottom: 1px solid rgb(92, 92, 92);" 
     class="d-flex text-white"
   >
@@ -10,10 +11,11 @@
         }">.</span> Eykamp</p>
       </div>
     </div>
-    <div style=" height: 100%; width: 60%; border-right: 1px solid #5c5c5c;" class="d-flex align-center justify-center text-uppercase">
+    <div style=" height: 100%; width: 50%; border-right: 1px solid #5c5c5c;" class="d-flex align-center justify-center text-uppercase">
       <div
         v-for="(route, index) in routes"
         :key="index"
+        @click="router.push({ name: route.name })"
         :style="{
           color: route.name === currentRoute.name ? '' : '#5c5c5c',
         }"
@@ -28,7 +30,7 @@
         variant="tonal"
       ></v-btn>
     </div>
-    <div style=" height: 100%; width: 20%;" class="d-flex align-center justify-center">
+    <div style=" height: 100%; width: 15%;" class="d-flex align-center justify-center">
       <v-btn
         variant="text"
       >contact me</v-btn>
@@ -39,6 +41,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
+import { useDisplay  } from 'vuetify'
+
+const { lgAndUp } = useDisplay()
 
 const router = useRouter()
 const currentRoute = useRoute()
