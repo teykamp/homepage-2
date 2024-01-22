@@ -2,11 +2,11 @@
   <v-app class="bg">
     <NavCard />
     <router-view v-slot="{ Component }">
-      <transition name="delay" mode="out-in">
-        <component :is="Component" />
-      </transition>
       <transition name="scale" mode="out-in">
         <div :key="route.path" class="scaling-div"></div>
+      </transition>
+      <transition name="delay" mode="out-in">
+        <component :is="Component" />
       </transition>
       </router-view>
   </v-app>
@@ -26,16 +26,16 @@ const route = useRoute()
   background-size: 20px 20px;
   height: 100vh; 
   width: 100%;
+  overflow: hidden;
 }
 
 .scaling-div {
-  height: 150vh;
-  width: 150vh;
+  width: 100%;
+  aspect-ratio: 1;
   border-radius: 50%;
   background: radial-gradient(circle at center, transparent 15%, #202020 15%, #202020 85%, transparent 85%);
   position: absolute;
-  top: 50vh;
-  left: 0;
+  top: -50vh;
   z-index: 100;
   pointer-events: none;
   transform: scale(0);
@@ -62,5 +62,13 @@ const route = useRoute()
 .scale-enter-active {
   transform: scale(10);
 }
-  
+ 
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 </style>
