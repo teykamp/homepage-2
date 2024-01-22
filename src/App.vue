@@ -22,29 +22,29 @@ const route = useRoute()
 <style scoped>
 .bg {
   background: #181818;
-  background-image: radial-gradient(rgb(32, 32, 32) 10%, transparent 10.01%);
+  background-image: radial-gradient(#202020 10%, transparent 10.01%);
   background-size: 20px 20px;
   height: 100vh; 
   width: 100%;
 }
 
 .scaling-div {
-  height: 100vh;
-  width: 100vh;
-  border-radius: 100%;
-  background: black;
+  height: 150vh;
+  width: 150vh;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, transparent 15%, #202020 15%, #202020 85%, transparent 85%);
   position: absolute;
   top: 50vh;
-  left: 50vh;
+  left: 0;
   z-index: 100;
   pointer-events: none;
   transform: scale(0);
 }
 
-.delay-ender-active,
+.delay-enter-active,
 .delay-leave-active {
-  transition-delay: 500ms;
   opacity: 0;
+  transition-delay: 200ms;
 }
 
 .scale-enter-from,
@@ -52,15 +52,15 @@ const route = useRoute()
   opacity: 1;
 }
 
-.scale-enter-active,
 .scale-leave-active {
   transform: scale(0);
-  transition: transform 500ms ease-in-out;
+  transition: transform 1300ms ease-in-out;
 }
 
 .scale-enter-from,
-.scale-leave-to {
-  transform: scale(3);
+.scale-leave-to,
+.scale-enter-active {
+  transform: scale(10);
 }
   
 </style>
