@@ -1,11 +1,12 @@
 <template>
-  <div ref="wrapper">
-    <v-sheet
+  <div ref="wrapper" :style="{width: props.format.width}">
+    <div
       @mouseenter="showHover = true"
       @mouseleave="showHover = false"
       @mousemove="handleMouseMove"
       class="card text-white rounded-sm"
       :style="{
+        width: '100%',
         overflow: 'hidden',
         position: 'relative',
         border: props.format.border ? '1px solid rgb(92, 92, 92)' : '',
@@ -24,7 +25,7 @@
       }"
       ></div>
     <slot name="content"></slot>
-    </v-sheet>
+    </div>
   </div>
 </template>
 
@@ -36,6 +37,7 @@ const props = defineProps<{
     borderAnimation: boolean,
     border: boolean,
     hoverEffect: boolean,
+    width: string,
   }
 }>()
 

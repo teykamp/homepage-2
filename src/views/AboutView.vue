@@ -1,8 +1,27 @@
 <template>
-  <div>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus eveniet sunt error. Repellendus facilis animi blanditiis enim ducimus vero doloremque obcaecati, officia tempora tenetur aliquid, eligendi quibusdam velit, vitae reiciendis quaerat modi totam exercitationem repellat illum cumque. Ipsa itaque vel quod pariatur laborum cumque reiciendis. Cupiditate nisi obcaecati culpa at ex quisquam provident voluptate neque nobis. Quaerat dolorem veniam quam quod velit expedita, mollitia dolores ab harum vel ex, ipsa sed atque consequatur qui optio quis magni omnis neque soluta impedit sit sapiente rerum beatae? Excepturi aut consequuntur mollitia inventore dignissimos, fugit natus ut dolore praesentium. Cum tempore sint officiis ut odio voluptatibus facere! Provident id tenetur numquam, consequuntur molestiae velit! Repellendus fugit minima quia sint quos excepturi deleniti illo placeat enim, consequuntur aliquam, ratione molestias quaerat ex reprehenderit necessitatibus dolores dicta praesentium cum itaque! Iste laudantium dicta inventore. Explicabo optio dignissimos dicta facilis aperiam sapiente, inventore iusto non voluptate, id esse doloribus. Sapiente dolores nulla laboriosam alias! Maiores veritatis vero quibusdam quae. Animi, doloremque ad odit porro architecto voluptatum quos atque quasi maxime. Dolorem neque reprehenderit facere illum, alias, autem vel earum blanditiis officiis nam perferendis vitae dolor. Non quasi autem totam a accusantium harum, nisi est doloremque nostrum libero voluptate ullam cumque possimus animi porro perferendis debitis illo nulla tenetur eligendi earum blanditiis quis ad! Numquam animi veritatis quae ratione aliquam hic ullam alias?
+  <div class="d-flex justify-center">
+      <CardAnimationWrapper 
+        :format="{
+          borderAnimation: true,
+          border: false,
+          hoverEffect: false,
+          width: '70%'
+        }"
+      >
+        <template #content>
+          <div
+            :style="{
+              height: 'calc(100vh - 80px - 80px)',
+              'border-right': '1px solid #5c5c5c',
+              'border-left': '1px solid #5c5c5c',
+              'border-bottom': '1px solid #5c5c5c',
+            }"
+           ></div>
+        </template>
+      </CardAnimationWrapper>
   </div>
 </template>
 
 <script setup lang="ts">
+import CardAnimationWrapper from '../components/CardAnimationWrapper.vue';
 </script>
