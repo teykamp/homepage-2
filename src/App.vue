@@ -43,17 +43,19 @@ const route = useRoute()
 .delay-enter-active,
 .delay-leave-active {
   opacity: 0;
-  transition-delay: 200ms;
+  transition: opacity 160ms;
 }
 
 .scale-enter-from,
 .scale-leave-to {
   opacity: 1;
+  transition: opacity 160ms;
+
 }
 
 .scale-leave-active {
   transform: scale(0);
-  transition: transform 1300ms ease-in-out;
+  transition: transform 1000ms ease-in-out;
 }
 
 .scale-enter-from,
