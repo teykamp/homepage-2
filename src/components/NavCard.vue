@@ -42,7 +42,7 @@
       <div
         class="donut" 
         :style="{
-          scale: contactMeHover ? '2' : ''
+          scale: contactMeHover ? `2.7` : ''
         }"
       ></div>
     </div>
