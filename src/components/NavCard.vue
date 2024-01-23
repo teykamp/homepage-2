@@ -6,6 +6,7 @@
   >
     <div style=" height: 100%; width: 15%;" class="d-flex align-center justify-center">
       <div class="text-bold">
+        <!-- have dot random one of 5 primary colors -->
         <p>T<span :style="{
           'color': 'red',
         }">.</span> Eykamp</p>
@@ -30,10 +31,20 @@
         variant="tonal"
       ></v-btn>
     </div>
-    <div style=" height: 100%; width: 15%;" class="d-flex align-center justify-center">
-      <v-btn
-        variant="text"
-      >contact me</v-btn>
+    <div style=" height: 100%; width: 15%; overflow: hidden; position: relative;" class="d-flex align-center justify-center">
+      <div
+        @mouseenter="contactMeHover = true"
+        @mouseleave="contactMeHover = false"
+        :style="{
+          cursor: 'pointer',
+        }"  
+      >CONTACT ME</div>
+      <div
+        class="donut" 
+        :style="{
+          scale: contactMeHover ? '2' : ''
+        }"
+      ></div>
     </div>
   </div>
 </template>
@@ -48,6 +59,8 @@ const { lgAndUp } = useDisplay()
 const router = useRouter()
 const currentRoute = useRoute()
 const routes = ref(router.options.routes)
+
+const contactMeHover = ref(false)
 
 const socialLinks = ref({
   linkedin: {
@@ -70,5 +83,16 @@ const socialLinks = ref({
 .route-text:hover {
   font-style: italic;
   cursor: pointer;
+}
+
+.donut {
+  position: absolute;
+  width: 110%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, transparent 15%, #202020 15%, #202020 85%, transparent 85%);
+  scale: 5;
+  transition: 300ms ease-in-out;
+  pointer-events: none;
 }
 </style>

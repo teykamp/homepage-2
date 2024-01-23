@@ -22,7 +22,7 @@ const route = useRoute()
 <style scoped>
 .bg {
   background: #181818;
-  background-image: radial-gradient(#202020 10%, transparent 10.01%);
+  background-image: radial-gradient(#202020 10%, transparent 10%);
   background-size: 20px 20px;
   height: 100vh; 
   width: 100%;
