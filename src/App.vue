@@ -35,7 +35,7 @@ const route = useRoute()
   border-radius: 50%;
   background: radial-gradient(circle at center, transparent 15%, #202020 15%, #202020 85%, transparent 85%);
   position: absolute;
-  z-index: 100;
+  z-index: 1000;
   pointer-events: none;
   transform: scale(0);
 }
