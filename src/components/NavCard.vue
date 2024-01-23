@@ -5,7 +5,8 @@
     class="d-flex text-white"
   >
     <div style=" height: 100%; width: 15%;" class="d-flex align-center justify-center">
-      <div class="text-bold">
+      <div class="text-bold" style="{ font-family: 'Playfair Display', serif;
+  font-family: 'Young Serif', serif; }">
         <!-- have dot random one of 5 primary colors -->
         <p>T<span :style="{
           'color': 'red',
@@ -42,7 +43,7 @@
       <div
         class="donut" 
         :style="{
-          scale: contactMeHover ? `2.7` : ''
+          scale: contactMeHover ? `2.6` : ''
         }"
       ></div>
     </div>
@@ -80,6 +81,7 @@ const socialLinks = ref({
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Martel&family=Playfair+Display&family=Roboto+Slab:wght@300&family=Young+Serif&display=swap');
 .route-text:hover {
   font-style: italic;
   cursor: pointer;

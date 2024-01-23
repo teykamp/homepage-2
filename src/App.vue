@@ -43,13 +43,12 @@ const route = useRoute()
 .delay-enter-active,
 .delay-leave-active {
   opacity: 0;
-  transition: opacity 160ms;
+  transition: opacity 120ms;
 }
 
 .scale-enter-from,
 .scale-leave-to {
   opacity: 1;
-  transition: opacity 160ms;
 
 }
 
