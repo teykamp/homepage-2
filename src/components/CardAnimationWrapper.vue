@@ -57,7 +57,7 @@ const handleMouseMove = (event: any) => {
 }
 
 const computedOpacity = computed(() => showHover.value ? 1 : 0)
-const computedHoverEffect = computed(() => props.format.hoverEffect ? 'scale(1.02)' : '')
+const computedHoverEffect = computed(() => props.format.hoverEffect ? 'scale(1.01)' : '')
 
 </script>
 
@@ -70,6 +70,7 @@ const computedHoverEffect = computed(() => props.format.hoverEffect ? 'scale(1.0
 }
 .card:hover {
   transform: v-bind(computedHoverEffect);
+  z-index: 500;
 }
 .gradient {
   background: linear-gradient(rgba(255, 255, 255, 0), rgb(144, 104, 167), rgba(255, 255, 255, 0));
