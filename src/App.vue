@@ -9,6 +9,7 @@
         <component :is="Component" />
       </transition>
       </router-view>
+      <div style="position: absolute; bottom: 40px; right: 0; z-index: 100; color: white; transform: rotate(90deg)">&copy; 2024</div>
   </v-app>
 </template>
 
