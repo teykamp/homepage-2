@@ -34,7 +34,7 @@
                 height: '100%',
               }"
                 cover
-                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.KswQObejDRMiXsDxs1QKmwHaEK%26pid%3DApi&f=1&ipt=31f432ff8681dc90f60731d571e7a324b5cc726c62201e5420b529f3bec9dd10&ipo=images"
+                :src="project.image"
               ></v-img>
               <div
                 :style="{

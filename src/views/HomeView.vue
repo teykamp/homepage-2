@@ -2,19 +2,44 @@
  <div>
    <div class="d-flex">
      <div 
-       :style="{
-         width: '65%',
-         height: 'calc(100vh - 80px - 100px)',
-         'border-right': '1px solid #5c5c5c',
+      :style="{
+        width: '65%',
+        height: 'calc(100vh - 80px - 100px)',
+        'border-right': '1px solid #5c5c5c',
        }"
-     ></div>
-     <div 
+    ></div>
+    <div
+       class="d-flex align-end"
        :style="{
          width: '35%',
          height: 'calc(100vh - 80px - 100px)',
+         padding: '30px',
        }"
-     ></div>
-   </div>
+     >
+
+      <div>
+        <div style="color: white;" class="d-flex justify-center">
+          <v-icon size="x-large" icon="mdi-code-braces"></v-icon>
+          <p style="font-size: 20px;" class="mx-4">+</p>
+          <v-icon size="x-large" icon="mdi-cog-outline"></v-icon>
+        </div>
+        <div>
+          <div
+            :style="{
+              color: 'white',
+              'font-size': '50px',
+              'margin-top': '15vh'
+            }"
+          >I'm an engineering consultant and full-stack developer.</div>
+          <div :style="{
+            color: 'gray',
+            'font-size': '30px',
+            'font-style': 'italic'
+          }">I solve challenging and engaging problems in any industry.</div>
+      </div>
+      </div>
+    </div>
+  </div>
    <div
      :style="{
        width: '100%',
