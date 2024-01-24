@@ -89,76 +89,10 @@
 <script setup lang="ts">
 import CardAnimationWrapper from '../components/CardAnimationWrapper.vue';
 import { useDisplay } from 'vuetify';
-import { ref } from 'vue'
+import { useProjectDetails } from '../store/index'
 
 const { mdAndUp } = useDisplay()
-
-const projectData = ref([
-  {
-    title: 'Timesheet',
-    description: 'full-stack application to track employee hours and get management approval. Includes comprehensive review and employee management system.',
-    date: '2023-2024',
-    type: ['developed'],
-    technologies: ['vue', 'postgresql', 'nodejs', 'google accounts'],
-    image: '',
-  },
-  {
-    title: 'BOSS Initiative',
-    description: 'complete website mockup and implementation for a New Hampshire-based prison reform organization.',
-    date: '2023-2024',
-    type: ['designed', 'developed'],
-    technologies: ['figma', 'vue', 'tailwind'],
-    image: '',
-  },
-  {
-    title: 'Markov Chains',
-    description: 'application to simulate markov chains. Implemented UI features including drag-and-drop and complex markov node visual features.',
-    date: '2023',
-    type: ['developed'],
-    technologies: ['vue', 'tailwind'],
-    image: '',
-  },
-  {
-    title: 'CoLab',
-    description: 'hackathon project to allow for seamless integration of chemical and environmental lab data into engineering reports.',
-    date: '2023',
-    type: ['developed'],
-    technologies: ['vue', 'nodejs', 'google sheets', 'google accounts'],
-    image: '',
-  },
-  {
-    title: 'Hanse Chat',
-    description: 'web and mobile application to allow inter organizational communication between clients and suppliers on an international scale.',
-    date: '2023',
-    type: ['designed'],
-    technologies: ['figma'],
-    image: '',
-  },
-  {
-    title: 'Clubs',
-    description: 'front-end application to allow for arduino-controlled LED juggling clubs to be controlled remotely. Implemented simple UI to allow for instantaneous alteration of colors and patterns in real-time.',
-    date: '2023',
-    type: ['developed'],
-    technologies: ['vue', 'arduino'],
-    image: '',
-  },
-  {
-    title: 'Artsite',
-    description: 'full-stack blog-style application for text and image posts. Has like/dislike system as well as comments and admin controls.',
-    date: '2023',
-    type: ['developed'],
-    technologies: ['vue', 'mongodb', 'nodejs'],
-    image: '',
-  },
-  {
-    title: 'Popout Portfolio',
-    description: 'full-stack application to dynamically display user-created resume and experience details. User would create an account and include data to be displayed.',
-    date: '2022',
-    type: ['developed'],
-    technologies: ['vue', 'mongodb', 'nodejs'],
-    image: '',
-  },
-])
+const { projectData } = useProjectDetails()
 
 // type ListIndex<T extends number> = T extends T & T >= 0 & T < projectData.value.length ? T : never  
 
@@ -169,17 +103,17 @@ const capitalizeFirstLetter = (word: string) => {
 }
 
 const getProjectType = (index: number) => {
-  if (index < 0 || index > projectData.value.length - 1) throw new Error('index not in range')
-  const typesLength = projectData.value[index].type.length
+  if (index < 0 || index > projectData.length - 1) throw new Error('index not in range')
+  const typesLength = projectData[index].type.length
   if (typesLength === 1) {
-    const singleString = projectData.value[index].type[0]
+    const singleString = projectData[index].type[0]
     return capitalizeFirstLetter(singleString)
   }
 
-  if (typesLength === 2) return capitalizeFirstLetter(projectData.value[index].type.join(' and '))
+  if (typesLength === 2) return capitalizeFirstLetter(projectData[index].type.join(' and '))
 
-  const commaSeparated = projectData.value[index].type.slice(0, length - 1).join(', ')
-  return `${commaSeparated}, and ${projectData.value[index].type[length - 1]}`
+  const commaSeparated = projectData[index].type.slice(0, length - 1).join(', ')
+  return `${commaSeparated}, and ${projectData[index].type[length - 1]}`
 }
 
 </script>

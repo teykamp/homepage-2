@@ -36,6 +36,7 @@
             >
               I like to solve challenging problems, anywhere... and to build solutions.
             </v-card-text>
+            <p>_________</p>
             <v-card-text
               :style="{
                 'max-width': '90%',
@@ -96,6 +97,7 @@ const softwareTechnologies = ref([
   'python',
   'sql',
   'mongodb',
+  'data science',
 ])
 
 const engineeringTechnologies = ref([
@@ -106,5 +108,6 @@ const engineeringTechnologies = ref([
   'stormwater',
   'chemical analysis',
   'CAD',
+  'project management',
 ])
 </script>

@@ -8,7 +8,7 @@
       <div class="text-bold" style="{ font-family: 'Playfair Display', serif;
   font-family: 'Young Serif', serif; }">
         <p>T<span :style="{
-          'color': dotColor,
+          'color': accentColor,
           'font-size': '20px'
         }">.</span> Eykamp</p>
       </div>
@@ -51,9 +51,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useDisplay  } from 'vuetify'
+import {  useAccentColors } from '../store/index'
+
+const { accentColor } = useAccentColors()
 
 const { lgAndUp } = useDisplay()
 
@@ -62,16 +65,6 @@ const currentRoute = useRoute()
 const routes = ref(router.options.routes)
 
 const contactMeHover = ref(false)
-
-const primaryColors = [
-  '#FF0000', // Red
-  '#00FF00', // Green
-  '#FFFF00', // Yellow
-  '#00FFFF', // Cyan
-  '#9370DB', // Lavender Purple
-]
-
-const dotColor = computed(() => primaryColors[Math.floor(Math.random() * primaryColors.length)])
 
 const socialLinks = ref({
   linkedin: {
