@@ -7,7 +7,23 @@
         height: 'calc(100vh - 80px - 100px)',
         'border-right': '1px solid #5c5c5c',
        }"
-    ></div>
+    >
+      <v-carousel 
+        v-model="caroselIndex"
+        :show-arrows="false" 
+        hide-delimiters
+        :style="{
+          height: '100%',
+        }"
+      >
+        <v-carousel-item
+          v-for="(image, index) in getProjectImages"
+          :key="index"
+          :src="image"
+          cover
+        ></v-carousel-item>
+      </v-carousel>
+    </div>
     <div
        class="d-flex align-end"
        :style="{
@@ -40,15 +56,15 @@
       </div>
     </div>
   </div>
-   <div
-     :style="{
-       width: '100%',
-       height: '100px',
-       'border-top': '1px solid #5c5c5c',
-     }"
-     class="text-white d-flex justify-end"
-   >
-   <p>This is a project description</p>
+  <div
+    :style="{
+      width: '100%',
+      height: '100px',
+      'border-top': '1px solid #5c5c5c',
+    }"
+    class="text-white d-flex justify-end"
+  >
+   <p>{{ projectData[caroselIndex].title }}</p>
 
    <div 
      class="d-flex align-center justify-center"
@@ -59,7 +75,9 @@
     position: 'relative',
     overflow: 'hidden',
    }">
+   <!-- could also turn this into a component. then could use for the 'contact me' button as well -->
     <v-icon
+      @click="changeCaroselIndex(-1)"
       @mouseenter="arrowHoverEffectId = 1"
       @mouseleave="arrowHoverEffectId = 0"
       size="x-large" 
@@ -82,7 +100,8 @@
     position: 'relative',
     overflow: 'hidden',
    }">
-    <v-icon 
+    <v-icon
+      @click="changeCaroselIndex(1)"
       @mouseenter="arrowHoverEffectId = 2"
       @mouseleave="arrowHoverEffectId = 0"
       size="x-large" 
@@ -102,6 +121,18 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useProjectDetails } from '../store/index'
+
+const { projectData, getProjectImages } = useProjectDetails()
+
+const caroselIndex = ref(0)
+const changeCaroselIndex = (changeDirection: 1 | -1) => {
+  const newIndex = caroselIndex.value += changeDirection
+  const projectDataLength = projectData.length
+  if (newIndex > projectDataLength - 1) return caroselIndex.value = 0
+  if (newIndex < 0) return caroselIndex.value = projectDataLength - 1
+  return newIndex
+}
 
 const arrowHoverEffectId = ref<0 | 1 | 2>(0)
 

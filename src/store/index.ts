@@ -9,7 +9,7 @@ export const useProjectDetails = defineStore('projectDetails', () => {
       date: '2023-2024',
       type: ['developed'],
       technologies: ['vue', 'postgresql', 'nodejs', 'google accounts'],
-      image: '',
+      image: 'https://www.bing.com/th?id=OADD2.8108927535464_1Y98Z63ES4KQE6I1MV&pid=21.2&c=16&roil=0&roit=0.2383&roir=1&roib=0.7617&w=300&h=157&dynsize=1&qlt=90',
     },
     {
       title: 'BOSS Initiative',
@@ -17,7 +17,7 @@ export const useProjectDetails = defineStore('projectDetails', () => {
       date: '2023-2024',
       type: ['designed', 'developed'],
       technologies: ['figma', 'vue', 'tailwind'],
-      image: '',
+      image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.AVqRztHH5TGqdxI2G_UDbAHaE9%26pid%3DApi&f=1&ipt=074efa46f61582406f0886acd678a28c98932516f85da0832a7d67dcb6f7e944&ipo=images',
     },
     {
       title: 'Markov Chains',
@@ -69,8 +69,13 @@ export const useProjectDetails = defineStore('projectDetails', () => {
     },
   ])
 
+  // maybe have list of logos as well or other images that look better on the front page
+
+  const getProjectImages = computed(() => projectData.value.map(project => project.image))
+
   return {
     projectData,
+    getProjectImages,
   }
 })
 
