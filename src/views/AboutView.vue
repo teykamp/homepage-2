@@ -43,7 +43,7 @@
                 'font-size': '20px',
               }"
             >
-              I'm an environmental engineer working on various chemical remediation design and implementation efforts in the northeastern US. I also develop full-stack web applications for mobile and desktop for clients and myself. I enjoy the challenge of learning on the fly.
+              I'm an environmental engineer and technology advisor working on various chemical remediation design and implementation efforts in the northeastern US and helping digitize work efforts through software and database management. I also develop full-stack web applications for mobile and desktop for clients and myself. I enjoy the challenge of learning on the fly.
             </v-card-text>
             <v-card-text
               :style="{
