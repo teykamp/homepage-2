@@ -70,7 +70,7 @@ export const useProjectDetails = defineStore('projectDetails', () => {
   ])
 
   // maybe have list of logos as well or other images that look better on the front page
-
+  // maybe have shorter list here as well of only the best ones?
   const getProjectImages = computed(() => projectData.value.map(project => project.image))
 
   return {

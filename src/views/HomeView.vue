@@ -8,6 +8,8 @@
         'border-right': '1px solid #5c5c5c',
        }"
     >
+
+       <!-- Instead of images could have UI test text art having different  text or something prettycolor could be from accentcolors -->
       <v-carousel 
         v-model="caroselIndex"
         :show-arrows="false" 
@@ -64,7 +66,9 @@
     }"
     class="text-white d-flex justify-end"
   >
-   <p>{{ projectData[caroselIndex].title }}</p>
+    <v-card-text 
+      class=""
+    >{{ projectData[caroselIndex].title }}</v-card-text>
 
    <div 
      class="d-flex align-center justify-center"

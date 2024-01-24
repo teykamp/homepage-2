@@ -39,12 +39,11 @@
               <div
                 :style="{
                   position: 'absolute',
-                  'background-color': 'rgba(0, 0, 0, 0.3)',
+                  'background-color': 'rgba(0, 0, 0, 0.1)',
                   top: 0,
                   left: 0,
                   width: '100%',
                   height: '100%',
-                  transition: 'opacity 400ms ease-in-out',
                 }"
               ></div>
               <div
