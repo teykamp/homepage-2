@@ -31,6 +31,9 @@
 
 <script setup lang="ts">
 import { defineProps, ref, computed, onMounted } from 'vue'
+import { useAccentColors } from '../store/index'
+
+const { accentColor } = useAccentColors()
 
 const props = defineProps<{
   format: {
@@ -73,7 +76,7 @@ const computedHoverEffect = computed(() => props.format.hoverEffect ? 'scale(1.0
   z-index: 500;
 }
 .gradient {
-  background: linear-gradient(rgba(255, 255, 255, 0), rgb(144, 104, 167), rgba(255, 255, 255, 0));
+  background: linear-gradient(rgba(255, 255, 255, 0), v-bind(accentColor), rgba(255, 255, 255, 0));
   opacity: v-bind(computedOpacity);
   transition: opacity;
   transition-duration: 550ms;

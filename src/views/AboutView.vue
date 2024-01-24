@@ -36,7 +36,7 @@
             >
               I like to solve challenging problems, anywhere... and to build solutions.
             </v-card-text>
-            <p>_________</p>
+            <p :style="{color: accentColor}">_________</p>
             <v-card-text
               :style="{
                 'max-width': '90%',
@@ -88,6 +88,9 @@
 <script setup lang="ts">
 import CardAnimationWrapper from '../components/CardAnimationWrapper.vue';
 import { ref } from 'vue'
+import { useAccentColors } from '../store/index'
+
+const { accentColor } = useAccentColors()
 
 const softwareTechnologies = ref([
   'vue',
