@@ -121,20 +121,28 @@
         </div>
       </div>
     </div>
-    <div v-else class="mt-14 mb-6">
-      
+    <div v-else class="mt-14 pa-4" style="position: relative;">
+      <div :style="{
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        height: '5px',
+        width: '100%',
+        background: accentColor,
+      }"></div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useProjectDetails } from '../store/index'
+import { useProjectDetails, useAccentColors } from '../store/index'
 import { useDisplay } from 'vuetify'
 
 const { lgAndUp } = useDisplay()
 
 const { projectData, getProjectImages } = useProjectDetails()
+const { accentColor } = useAccentColors()
 
 const caroselIndex = ref(0)
 const changeCaroselIndex = (changeDirection: 1 | -1) => {
