@@ -29,7 +29,7 @@
                   'font-size': '50px',
                 }"
               >
-                Hi, I'm Thomas
+                {{ title }}
               </v-card-text>
               <v-card-text
                 :style="{
@@ -38,7 +38,7 @@
                   'max-width': '70%'
                 }"
               >
-                I like to solve challenging problems, anywhere... and to build solutions.
+                {{ subtitle }}
               </v-card-text>
               <p :style="{color: accentColor}">_________</p>
               <v-card-text
@@ -47,7 +47,7 @@
                   'font-size': '20px',
                 }"
               >
-                I'm an environmental engineer and technology advisor working on various chemical remediation design and implementation efforts throughout the US and helping digitize work efforts through software and database management. I also develop full-stack web applications for clients and myself. I enjoy the challenge of learning on the fly.
+                {{ body }}
               </v-card-text>
               <v-card-text
                 :style="{
@@ -57,8 +57,8 @@
                 Here are some of my technical skills:
               </v-card-text>
               <div class="d-flex justify-space-around mb-2">
-                <div style="color: gray">software technologies</div>
-                <div style="color: gray">engineering technologies</div>
+                <div style="color: gray">software skills</div>
+                <div style="color: gray">engineering skills</div>
               </div>
               <div class="d-flex justify-space-around">
                 <div style="background-color: #181818; max-height: 150px; color: white; display: flex; flex-wrap: wrap; flex-direction: column;">
@@ -88,8 +88,52 @@
         </template>
       </CardAnimationWrapper>
     </div>
-    <div v-else>
-
+    <div v-else class="mt-14 px-6 mb-6">
+      <v-card-text 
+        :style="{
+          'font-size': '40px',
+          color: 'white',
+        }"
+      >
+        {{ title }}
+      </v-card-text>
+      <v-card-text
+        :style="{
+          color: 'gray',
+          'font-size': '20px',
+        }"
+      >
+        {{ subtitle }}
+      </v-card-text>
+      <p :style="{ color: accentColor, 'margin-left': '15px', }">_________</p>
+      <v-card-text
+        :style="{
+          'font-size': '15px',
+          color: 'white',
+        }"
+      >
+        {{ body }}
+      </v-card-text>
+      <v-card-text style="color: gray;">software skills</v-card-text>
+      <v-list-item 
+        v-for="technology in softwareTechnologies"
+        :key="technology"
+        prepend-icon="mdi-menu-right"
+        density="compact"
+        class="text-white"
+      >
+        {{ technology }}
+      </v-list-item>
+      <v-card-text style="color: gray;">engineering skills</v-card-text>
+      <v-list-item
+        v-for="technology in engineeringTechnologies"
+        :key="technology"
+        prepend-icon="mdi-menu-right"
+        density="compact"
+        class="text-white"
+      >
+        {{ technology }}
+      </v-list-item>
     </div>
   </div>
 </template>
@@ -122,7 +166,11 @@ const engineeringTechnologies = ref([
   'remediation',
   'stormwater',
   'chemical analysis',
-  'CAD',
+  'CAD, GIS',
   'project management',
 ])
+
+const title = ref('Hi, I\'m Thomas')
+const subtitle = ref('I like to solve challenging problems, anywhere... and to build solutions.')
+const body = ref('I\'m an environmental engineer and technology advisor working on various chemical remediation design and implementation efforts throughout the US and helping digitize work efforts through software and database management. I also develop full - stack web applications for clients and myself. I enjoy the challenge of learning on the fly.')
 </script>

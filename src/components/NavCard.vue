@@ -57,7 +57,7 @@
           variant="text" 
           color="white"
         ></v-app-bar-nav-icon>
-         <div class="text-bold text-white ml-2" style="{ font-family: 'Playfair Display', serif; font-family: 'Young Serif', serif; }">
+         <div class="text-bold text-white ml-2" style="font-family: 'Playfair Display', serif; font-family: 'Young Serif', serif;">
             <p>T<span :style="{
               'color': accentColor,
               'font-size': '20px'
@@ -80,7 +80,10 @@
             }"
             class="ml-10"
           >{{ String(route.name).toUpperCase() }}</v-list-item>
-          <v-divider style="color: white;" class="mt-4"></v-divider>
+          <v-divider 
+            style="color: white;" 
+            class="mt-4"
+          ></v-divider>
           <div class="d-flex justify-center mt-8">
             <v-btn
               v-for="(link, key) in socialLinks"
@@ -94,7 +97,17 @@
             ></v-btn>
           </div>
           <div class="d-flex justify-center mt-8">
-            <v-btn variant="tonal" class="text-white">Contact Me</v-btn>
+            <v-btn 
+              variant="tonal" 
+              class="text-white"
+            >Contact Me</v-btn>
+          </div>
+          <div class="d-flex justify-center mt-8">
+            <v-btn
+              class="mt-10 text-white" 
+              prepend-icon="mdi-file-pdf-box" 
+              variant="tonal"
+            >Resume</v-btn>
           </div>
         </v-list>      
       </v-navigation-drawer>
