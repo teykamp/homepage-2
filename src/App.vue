@@ -1,9 +1,9 @@
 <template>
-  <v-app class="bg">
+  <v-app class="bg" :style="{ overflow: mdAndDown ? '' : 'hidden', 'overflow-x': 'hidden', }">
     <NavCard />
     <router-view v-slot="{ Component }">
       <transition name="scale" mode="out-in">
-        <div :key="route.path" class="scaling-div"></div>
+        <div :key="route.path" class="scaling-div" :style="{'margin-top': mdAndDown ? '200px' : ''}"></div>
       </transition>
       <transition name="delay" mode="out-in">
         <component :is="Component" />
@@ -16,6 +16,9 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import NavCard from './components/NavCard.vue';
+import { useDisplay } from 'vuetify';
+
+const { mdAndDown } = useDisplay()
 
 const route = useRoute()
 </script>
@@ -25,9 +28,8 @@ const route = useRoute()
   background: #181818;
   background-image: radial-gradient(#202020 10%, transparent 10%);
   background-size: 20px 20px;
-  height: 100vh; 
+  min-height: 100vh; 
   width: 100%;
-  overflow: hidden;
 }
 
 .scaling-div {

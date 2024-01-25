@@ -1,5 +1,9 @@
 <template>
-  <div class="d-flex justify-center">
+  <div>
+    <div 
+      v-if="lgAndUp"
+      class="d-flex justify-center"
+    >
       <CardAnimationWrapper 
         :format="{
           borderAnimation: true,
@@ -19,77 +23,84 @@
             }"
             class="d-flex justify-center"
           >
-          <div style="width: 100%;">
-            <v-card-text 
-              :style="{
-                'font-size': '50px',
-              }"
-            >
-              Hi, I'm Thomas
-            </v-card-text>
-            <v-card-text
-              :style="{
-                color: 'gray',
-                'font-size': '30px',
-                'max-width': '70%'
-              }"
-            >
-              I like to solve challenging problems, anywhere... and to build solutions.
-            </v-card-text>
-            <p :style="{color: accentColor}">_________</p>
-            <v-card-text
-              :style="{
-                'max-width': '90%',
-                'font-size': '20px',
-              }"
-            >
-              I'm an environmental engineer and technology advisor working on various chemical remediation design and implementation efforts throughout the US and helping digitize work efforts through software and database management. I also develop full-stack web applications for clients and myself. I enjoy the challenge of learning on the fly.
-            </v-card-text>
-            <v-card-text
-              :style="{
-                'font-size': '20px',
-              }"
-            >
-              Here are some of my technical skills:
-            </v-card-text>
-            <div class="d-flex justify-space-around mb-2">
-              <div style="color: gray">software technologies</div>
-              <div style="color: gray">engineering technologies</div>
-            </div>
-            <div class="d-flex justify-space-around">
-              <div style="background-color: #181818; max-height: 150px; color: white; display: flex; flex-wrap: wrap; flex-direction: column;">
-                <v-list-item 
-                  v-for="technology in softwareTechnologies"
-                  :key="technology"
-                  prepend-icon="mdi-menu-right"
-                  density="compact"
-                >
-                  {{ technology }}
-                </v-list-item>
+            <div style="width: 100%;">
+              <v-card-text 
+                :style="{
+                  'font-size': '50px',
+                }"
+              >
+                Hi, I'm Thomas
+              </v-card-text>
+              <v-card-text
+                :style="{
+                  color: 'gray',
+                  'font-size': '30px',
+                  'max-width': '70%'
+                }"
+              >
+                I like to solve challenging problems, anywhere... and to build solutions.
+              </v-card-text>
+              <p :style="{color: accentColor}">_________</p>
+              <v-card-text
+                :style="{
+                  'max-width': '90%',
+                  'font-size': '20px',
+                }"
+              >
+                I'm an environmental engineer and technology advisor working on various chemical remediation design and implementation efforts throughout the US and helping digitize work efforts through software and database management. I also develop full-stack web applications for clients and myself. I enjoy the challenge of learning on the fly.
+              </v-card-text>
+              <v-card-text
+                :style="{
+                  'font-size': '20px',
+                }"
+              >
+                Here are some of my technical skills:
+              </v-card-text>
+              <div class="d-flex justify-space-around mb-2">
+                <div style="color: gray">software technologies</div>
+                <div style="color: gray">engineering technologies</div>
               </div>
-              <div style="background-color: #181818; max-height: 150px; color: white; display: flex; flex-wrap: wrap; flex-direction: column;">
-                <v-list-item
-                  v-for="technology in engineeringTechnologies"
-                  :key="technology"
-                  prepend-icon="mdi-menu-right"
-                  density="compact"
-                >
-                  {{ technology }}
-                </v-list-item>
+              <div class="d-flex justify-space-around">
+                <div style="background-color: #181818; max-height: 150px; color: white; display: flex; flex-wrap: wrap; flex-direction: column;">
+                  <v-list-item 
+                    v-for="technology in softwareTechnologies"
+                    :key="technology"
+                    prepend-icon="mdi-menu-right"
+                    density="compact"
+                  >
+                    {{ technology }}
+                  </v-list-item>
+                </div>
+                <div style="background-color: #181818; max-height: 150px; color: white; display: flex; flex-wrap: wrap; flex-direction: column;">
+                  <v-list-item
+                    v-for="technology in engineeringTechnologies"
+                    :key="technology"
+                    prepend-icon="mdi-menu-right"
+                    density="compact"
+                  >
+                    {{ technology }}
+                  </v-list-item>
+                </div>
               </div>
+              <v-btn class="mt-10" prepend-icon="mdi-file-pdf-box" variant="tonal">Resume</v-btn>
             </div>
-            <v-btn class="mt-10" prepend-icon="mdi-file-pdf-box" variant="tonal">Resume</v-btn>
           </div>
-        </div>
-      </template>
-    </CardAnimationWrapper>
+        </template>
+      </CardAnimationWrapper>
+    </div>
+    <div v-else>
+
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import CardAnimationWrapper from '../components/CardAnimationWrapper.vue';
 import { ref } from 'vue'
+import { useDisplay } from 'vuetify';
 import { useAccentColors } from '../store/index'
+
+const { lgAndUp } = useDisplay()
 
 const { accentColor } = useAccentColors()
 

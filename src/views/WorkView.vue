@@ -1,86 +1,93 @@
 <template>
-  <div class="d-flex justify-center">
+  <div>
     <div 
-      :style="{
-        width: '85%',
-        display: 'grid',
-        'grid-template-columns': 'repeat(2, 1fr)',
-        gap: '5px',
-        'margin-top': '5px',
-      }"
+      v-if="lgAndUp"
+      class="d-flex justify-center"
     >
-      <CardAnimationWrapper 
-        v-for="(project, index) in projectData"
-        :key="index"
-        :format="{
-          borderAnimation: false,
-          border: true,
-          hoverEffect: true,
-          width: '100%',
+      <div 
+        :style="{
+          width: '85%',
+          display: 'grid',
+          'grid-template-columns': 'repeat(2, 1fr)',
+          gap: '5px',
+          'margin-top': '5px',
         }"
       >
-        <template #content>
-          <div :style="{
-            height: mdAndUp ? 'calc((100vh - 80px - 30px) / 4)' : '300px',
+        <CardAnimationWrapper 
+          v-for="(project, index) in projectData"
+          :key="index"
+          :format="{
+            borderAnimation: false,
+            border: true,
+            hoverEffect: true,
             width: '100%',
-            position: 'relative',
-          }">
-            <v-img
-              :style="{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-              }"
-                cover
-                :src="project.image"
-              ></v-img>
-              <div
+          }"
+        >
+          <template #content>
+            <div :style="{
+              height: lgAndUp ? 'calc((100vh - 80px - 30px) / 4)' : '300px',
+              width: '100%',
+              position: 'relative',
+            }">
+              <v-img
                 :style="{
                   position: 'absolute',
-                  'background-color': 'rgba(0, 0, 0, 0.1)',
                   top: 0,
                   left: 0,
                   width: '100%',
                   height: '100%',
                 }"
-              ></div>
-              <div
-                class="overlay d-flex align-end pl-3"
-                :style="{
-                  position: 'absolute',
-                  'background-color': 'rgba(0, 0, 0, 0.6)',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%',
-                  transition: 'opacity 400ms ease-in-out',
-                  cursor: 'pointer',
-                }"
-              >
-              <div>
-                <v-card-title style="font-size: 30px;">{{ project.title }}</v-card-title>
-                <v-card-subtitle>{{ project.date }}</v-card-subtitle>
-                <v-card-text class="d-flex justify-space-between mr-2">{{ getProjectType(index) }} {{ project.description }} 
-                  <div>
-                    <v-chip 
-                      v-for="(technology) in projectData[index].technologies" 
-                      :key="index"
-                      label
-                      size="x-small"
-                      class="ml-1 mt-1"
-                    >
-                      {{ technology }}
-                    </v-chip>
-                  </div>
-                </v-card-text>
+                  cover
+                  :src="project.image"
+                ></v-img>
+                <div
+                  :style="{
+                    position: 'absolute',
+                    'background-color': 'rgba(0, 0, 0, 0.1)',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                  }"
+                ></div>
+                <div
+                  class="overlay d-flex align-end pl-3"
+                  :style="{
+                    position: 'absolute',
+                    'background-color': 'rgba(0, 0, 0, 0.6)',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    transition: 'opacity 400ms ease-in-out',
+                    cursor: 'pointer',
+                  }"
+                >
+                <div>
+                  <v-card-title style="font-size: 30px;">{{ project.title }}</v-card-title>
+                  <v-card-subtitle>{{ project.date }}</v-card-subtitle>
+                  <v-card-text class="d-flex justify-space-between mr-2">{{ getProjectType(index) }} {{ project.description }} 
+                    <div>
+                      <v-chip 
+                        v-for="(technology) in projectData[index].technologies" 
+                        :key="index"
+                        label
+                        size="x-small"
+                        class="ml-1 mt-1"
+                      >
+                        {{ technology }}
+                      </v-chip>
+                    </div>
+                  </v-card-text>
+                </div>
               </div>
             </div>
-          </div>
-        </template>
-      </CardAnimationWrapper>
-    
+          </template>
+        </CardAnimationWrapper>
+      </div>
+    </div>
+    <div v-else>
+
     </div>
   </div>
 </template>
@@ -90,7 +97,7 @@ import CardAnimationWrapper from '../components/CardAnimationWrapper.vue';
 import { useDisplay } from 'vuetify';
 import { useProjectDetails } from '../store/index'
 
-const { mdAndUp } = useDisplay()
+const { lgAndUp } = useDisplay()
 const { projectData } = useProjectDetails()
 
 // type ListIndex<T extends number> = T extends T & T >= 0 & T < projectData.value.length ? T : never  
