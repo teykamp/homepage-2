@@ -43,7 +43,7 @@
                 'font-size': '20px',
               }"
             >
-              I'm an environmental engineer and technology advisor working on various chemical remediation design and implementation efforts in the northeastern US and helping digitize work efforts through software and database management. I also develop full-stack web applications for mobile and desktop for clients and myself. I enjoy the challenge of learning on the fly.
+              I'm an environmental engineer and technology advisor working on various chemical remediation design and implementation efforts throughout the US and helping digitize work efforts through software and database management. I also develop full-stack web applications for clients and myself. I enjoy the challenge of learning on the fly.
             </v-card-text>
             <v-card-text
               :style="{
@@ -78,10 +78,11 @@
                 </v-list-item>
               </div>
             </div>
+            <v-btn class="mt-10" prepend-icon="mdi-file-pdf-box" variant="tonal">Resume</v-btn>
           </div>
-          </div>
-        </template>
-      </CardAnimationWrapper>
+        </div>
+      </template>
+    </CardAnimationWrapper>
   </div>
 </template>
 
