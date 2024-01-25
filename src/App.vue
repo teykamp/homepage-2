@@ -3,7 +3,7 @@
     <NavCard />
     <router-view v-slot="{ Component }">
       <transition name="scale" mode="out-in">
-        <div :key="route.path" class="scaling-div" :style="{'margin-top': mdAndDown ? '200px' : ''}"></div>
+        <div :key="route.path" class="scaling-div" :style="{'margin-top': mdAndDown ? '150px' : ''}"></div>
       </transition>
       <transition name="delay" mode="out-in">
         <component :is="Component" />
