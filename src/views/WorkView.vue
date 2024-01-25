@@ -25,7 +25,7 @@
         >
           <template #content>
             <div :style="{
-              height: lgAndUp ? 'calc((100vh - 80px - 30px) / 4)' : '300px',
+              height: 'calc((100vh - 80px - 30px) / 4)',
               width: '100%',
               position: 'relative',
             }">
@@ -86,9 +86,42 @@
         </CardAnimationWrapper>
       </div>
     </div>
-    <div v-else class="mt-14">
-
-
+    <div v-else class="mt-14 pa-4" style="position: relative;">
+      <v-card
+        v-for="(project, index) in projectData"
+        :key="index"
+        :style="{
+          background: '#181818',
+        }"
+        class="my-6"
+        flat
+      >
+        <v-img
+          cover
+          :src="project.image"
+        ></v-img>
+        <!-- title on alpha .4 background on image? rest below? -->
+        <v-card-title class="text-white" style="font-size: 30px;">{{ project.title }}</v-card-title>
+        <v-card-subtitle class="text-white">{{ project.date }}</v-card-subtitle>
+        <v-card-text class="d-flex justify-space-between mr-2 text-white">{{ getProjectType(index) }} {{ project.description }}</v-card-text>
+        <v-chip 
+          v-for="(technology) in projectData[index].technologies" 
+          :key="index"
+          label
+          size="x-small"
+          class="ml-1 mt-1 text-white"
+        >
+          {{ technology }}
+        </v-chip>
+      </v-card>
+      <div :style="{
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        height: '5px',
+        width: '100%',
+        background: accentColor,
+      }"></div>
     </div>
   </div>
 </template>
@@ -96,10 +129,11 @@
 <script setup lang="ts">
 import CardAnimationWrapper from '../components/CardAnimationWrapper.vue';
 import { useDisplay } from 'vuetify';
-import { useProjectDetails } from '../store/index'
+import { useProjectDetails, useAccentColors } from '../store/index'
 
 const { lgAndUp } = useDisplay()
 const { projectData } = useProjectDetails()
+const { accentColor } = useAccentColors()
 
 // type ListIndex<T extends number> = T extends T & T >= 0 & T < projectData.value.length ? T : never  
 

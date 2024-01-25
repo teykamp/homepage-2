@@ -88,7 +88,7 @@
         </template>
       </CardAnimationWrapper>
     </div>
-    <div v-else class="mt-14 px-6 mb-6">
+    <div v-else class="mt-14 pa-6" style="position: relative;">
       <v-card-text 
         :style="{
           'font-size': '40px',
@@ -114,6 +114,7 @@
       >
         {{ body }}
       </v-card-text>
+      
       <v-card-text style="color: gray;">software skills</v-card-text>
       <v-list-item 
         v-for="technology in softwareTechnologies"
@@ -134,6 +135,14 @@
       >
         {{ technology }}
       </v-list-item>
+      <div :style="{
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        height: '5px',
+        width: '100%',
+        background: accentColor,
+      }"></div>
     </div>
   </div>
 </template>

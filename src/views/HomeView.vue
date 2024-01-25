@@ -121,7 +121,7 @@
         </div>
       </div>
     </div>
-    <div v-else class="mt-14">
+    <div v-else class="mt-14 mb-6">
       
     </div>
   </div>
