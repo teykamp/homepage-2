@@ -68,17 +68,34 @@
         v-model="drawer"
         location="bottom"
         temporary
-        style="background: #181818;"
+        style="background: #181818; height: 80vh;"
       >
-        <v-list>
+        <v-list class="mt-6" >
           <v-list-item
             v-for="(route, index) in routes"
             :key="index"
             @click="router.push({ name: route.name })"
             :style="{
-              color: route.name === currentRoute.name ? '' : '#5c5c5c',
+              color: route.name === currentRoute.name ? 'white' : '#5c5c5c',
             }"
-          >{{ route.name }}</v-list-item>
+            class="ml-10"
+          >{{ String(route.name).toUpperCase() }}</v-list-item>
+          <v-divider style="color: white;" class="mt-4"></v-divider>
+          <div class="d-flex justify-center mt-8">
+            <v-btn
+              v-for="(link, key) in socialLinks"
+              :key="key"
+              :href="link.link"
+              target="_blank"
+              :icon="link.icon"
+              variant="tonal"
+              style="color: white;"
+              class="mx-4"
+            ></v-btn>
+          </div>
+          <div class="d-flex justify-center mt-8">
+            <v-btn variant="tonal" class="text-white">Contact Me</v-btn>
+          </div>
         </v-list>      
       </v-navigation-drawer>
     </div>
