@@ -28,6 +28,8 @@
       <v-btn
         v-for="(link, key) in socialLinks"
         :key="key"
+        :href="link.link"
+        target="_blank"
         :icon="link.icon"
         variant="tonal"
       ></v-btn>
@@ -69,15 +71,15 @@ const contactMeHover = ref(false)
 const socialLinks = ref({
   linkedin: {
     icon: 'mdi-linkedin',
-    link: '',
+    link: 'https://linkedin.com/in/thomas-eykamp/',
   },
   github: {
     icon: 'mdi-github',
-    link: '',
+    link: 'https://github.com/teykamp',
   },
   email: {
     icon: 'mdi-email',
-    link: '',
+    link: 'mailto:thomas@eykamp.com',
   }
 })
 
