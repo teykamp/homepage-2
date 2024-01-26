@@ -150,11 +150,13 @@
             :src="projectData[currentProjectDisplayIndex].image"
             style="max-height: 700px;"
           ></v-img>
-          <v-card-title class="text-white" style="font-size: 30px;">{{ projectData[currentProjectDisplayIndex].title }}</v-card-title>
-          <v-card-text class="d-flex justify-space-between ml-4 text-white" style="max-width: 800px;">{{ projectData[currentProjectDisplayIndex].fullText }}</v-card-text>
-          <v-card-title class="text-white" style="font-size: 20px;">Challenges</v-card-title>
-          <v-card-text class="d-flex justify-space-between ml-4 text-white">{{ projectData[currentProjectDisplayIndex].challenges }}</v-card-text>
-          
+          <div :style="{'margin-left': lgAndUp ? '10%' : ''}">
+            <v-card-title class="text-white" style="font-size: 30px;">{{ projectData[currentProjectDisplayIndex].title }}</v-card-title>
+            <v-card-text class="d-flex justify-space-between ml-4 text-white" style="max-width: 800px;">{{ projectData[currentProjectDisplayIndex].fullText }}</v-card-text>
+            <v-card-title class="text-white" style="font-size: 20px;">Challenges</v-card-title>
+            <v-card-text class="d-flex justify-space-between ml-4 text-white" style="max-width: 800px;">{{ projectData[currentProjectDisplayIndex].challenges }}</v-card-text>
+            
+          </div>
           <v-img
             v-for="(image, index) in projectData[currentProjectDisplayIndex].supportingImages"
             :key="index"
