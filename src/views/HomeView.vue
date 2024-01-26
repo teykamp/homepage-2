@@ -48,12 +48,12 @@
                   'font-size': '50px',
                   'margin-top': '15vh'
                 }"
-              >I'm an engineering consultant and full-stack developer.</div>
+              >{{ title }}</div>
               <div :style="{
                 color: 'gray',
                 'font-size': '30px',
                 'font-style': 'italic'
-              }">I solve challenging and engaging problems in any industry.</div>
+              }">{{ subtitle }}</div>
           </div>
           </div>
         </div>
@@ -121,7 +121,34 @@
         </div>
       </div>
     </div>
-    <div v-else class="mt-14 pa-4" style="position: relative;">
+    <div v-else class="mt-14 pa-4" style="position: relative; height: calc(100vh - 56px)">
+
+      <div style="color: white; margin-top: 40%;" class="d-flex justify-center">
+        <v-icon size="x-large" icon="mdi-code-braces"></v-icon>
+        <p style="font-size: 20px;" class="mx-4">+</p>
+        <v-icon size="x-large" icon="mdi-cog-outline"></v-icon>
+      </div>
+        
+      <div :style="{
+        position: 'absolute',
+        bottom: '10%',
+        left: '20px',
+        width: '95%',
+      }">
+        <v-card-text
+          :style="{
+            'font-size': '30px',
+            color: 'white',
+          }"
+        >{{ title }}</v-card-text>
+        <v-card-text 
+          :style="{
+            color: 'gray',
+            'font-size': '25px',
+          }"
+        >{{ subtitle }}</v-card-text>
+      </div>
+      
       <div :style="{
         position: 'absolute',
         bottom: 0,
@@ -155,6 +182,8 @@ const changeCaroselIndex = (changeDirection: 1 | -1) => {
 
 const arrowHoverEffectId = ref<0 | 1 | 2>(0)
 
+const title = ref('I\'m an engineering consultant and full - stack developer.')
+const subtitle = ref('I solve challenging and engaging problems in any industry.')
 </script>
 
 <style scoped>
