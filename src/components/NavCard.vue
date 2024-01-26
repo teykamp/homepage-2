@@ -96,7 +96,7 @@
               class="mx-4"
             ></v-btn>
           </div>
-          <div class="d-flex justify-center mt-8">
+          <div class="d-flex justify-center mt-14">
             <v-btn 
               variant="tonal" 
               class="text-white"
