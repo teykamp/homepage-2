@@ -25,7 +25,7 @@
         >
           <template #content>
             <div :style="{
-              height: 'calc((100vh - 80px - 30px) / 4)',
+              height: 'calc((100vh - 80px - 30px) / 3.1)',
               width: '100%',
               position: 'relative',
             }">
@@ -84,6 +84,7 @@
             </div>
           </template>
         </CardAnimationWrapper>
+        <p class="text-white">If you want to see all of my work, please visit my github.</p>
       </div>
     </div>
 
