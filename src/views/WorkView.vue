@@ -22,6 +22,7 @@
             hoverEffect: true,
             width: '100%',
           }"
+          @click="showDialog = true, currentProjectDisplayIndex = index"
         >
           <template #content>
             <div :style="{
@@ -101,6 +102,7 @@
         flat
       >
         <v-img
+          @click="showDialog = true, currentProjectDisplayIndex = index"
           cover
           :src="project.image"
         ></v-img>
@@ -127,17 +129,67 @@
         background: accentColor,
       }"></div>
     </div>
+
+    <v-dialog
+      v-model="showDialog"
+      :fullscreen="true"
+      :style="{
+        background: '#181818',
+      }"
+    >
+      <v-btn 
+        @click="showDialog = false"
+        icon="mdi-arrow-left"
+        variant="tonal"
+        class="ma-5 rounded-lg"
+        style="color: white;"
+      ></v-btn>
+      <div style="position: relative;" class="pa-10">
+        <div>
+          <v-img
+            :src="projectData[currentProjectDisplayIndex].image"
+            style="max-height: 700px;"
+          ></v-img>
+          <v-card-title class="text-white" style="font-size: 30px;">{{ projectData[currentProjectDisplayIndex].title }}</v-card-title>
+          <v-card-text class="d-flex justify-space-between ml-4 text-white" style="max-width: 800px;">{{ projectData[currentProjectDisplayIndex].fullText }}</v-card-text>
+          <v-card-title class="text-white" style="font-size: 20px;">Challenges</v-card-title>
+          <v-card-text class="d-flex justify-space-between ml-4 text-white">{{ projectData[currentProjectDisplayIndex].challenges }}</v-card-text>
+          
+          <v-img
+            v-for="(image, index) in projectData[currentProjectDisplayIndex].supportingImages"
+            :key="index"
+            :src="image"
+            class="my-5"
+            style="max-height: 600px;"
+          ></v-img>
+        </div>
+        <div :style="{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          height: '5px',
+          width: '100%',
+          background: accentColor,
+        }"
+        ></div>
+      </div>
+    </v-dialog>
   </div>
 </template>
 
 <script setup lang="ts">
 import CardAnimationWrapper from '../components/CardAnimationWrapper.vue';
+import { ref } from 'vue'
 import { useDisplay } from 'vuetify';
 import { useProjectDetails, useAccentColors } from '../store/index'
 
 const { lgAndUp } = useDisplay()
 const { projectData } = useProjectDetails()
 const { accentColor } = useAccentColors()
+
+
+const showDialog = ref(false)
+const currentProjectDisplayIndex = ref(0)
 
 // type ListIndex<T extends number> = T extends T & T >= 0 & T < projectData.value.length ? T : never  
 

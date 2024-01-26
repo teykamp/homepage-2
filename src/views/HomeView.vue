@@ -67,7 +67,7 @@
         class="text-white d-flex justify-end"
       >
         <v-card-text 
-          class=""
+          style="font-size: large; font-style: italic;"
         >{{ projectData[caroselIndex].title }}</v-card-text>
     
         <div 
