@@ -50,6 +50,9 @@
         ></div>
       </div>
     </div>
+
+    <!-- --- --- --- -->
+
     <div v-else>
       <v-app-bar style="background: #181818; width: 100%;">
         <v-app-bar-nav-icon

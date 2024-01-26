@@ -88,6 +88,9 @@
         </template>
       </CardAnimationWrapper>
     </div>
+
+    <!-- --- --- --- -->
+
     <div v-else class="mt-14 pa-6" style="position: relative;">
       <v-card-text 
         :style="{

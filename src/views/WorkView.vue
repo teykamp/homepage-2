@@ -86,6 +86,9 @@
         </CardAnimationWrapper>
       </div>
     </div>
+
+    <!-- --- --- --- -->
+
     <div v-else class="mt-14 pa-4" style="position: relative;">
       <v-card
         v-for="(project, index) in projectData"

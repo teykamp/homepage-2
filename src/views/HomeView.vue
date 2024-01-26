@@ -121,6 +121,9 @@
         </div>
       </div>
     </div>
+
+    <!-- --- --- --- -->
+
     <div v-else class="mt-14 pa-4" style="position: relative; height: calc(100vh - 56px)">
 
       <div style="color: white; margin-top: 40%;" class="d-flex justify-center">
