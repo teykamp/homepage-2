@@ -82,7 +82,6 @@
                   </v-list-item>
                 </div>
               </div>
-              <v-btn class="mt-10" prepend-icon="mdi-file-pdf-box" variant="tonal">Resume</v-btn>
             </div>
           </div>
         </template>

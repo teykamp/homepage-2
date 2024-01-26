@@ -32,16 +32,23 @@
           target="_blank"
           :icon="link.icon"
           variant="tonal"
+          class="rounded-lg"
         ></v-btn>
       </div>
-      <div style=" height: 100%; width: 15%; overflow: hidden; position: relative;" class="d-flex align-center justify-center">
+      <div style=" height: 100%; width: 15%; overflow: hidden; position: relative; gap: 10px;" class="d-flex align-center justify-center">
         <div
+          @click="openResume"
           @mouseenter="contactMeHover = true"
           @mouseleave="contactMeHover = false"
           :style="{
             cursor: 'pointer',
           }"  
-        >CONTACT ME</div>
+        >
+          <v-icon
+            icon="mdi-file-pdf-box"
+          ></v-icon>
+          Resume
+        </div>
         <div
           class="donut" 
           :style="{
@@ -99,14 +106,9 @@
               class="mx-4"
             ></v-btn>
           </div>
-          <div class="d-flex justify-center mt-14">
-            <v-btn 
-              variant="tonal" 
-              class="text-white"
-            >Contact Me</v-btn>
-          </div>
           <div class="d-flex justify-center mt-8">
             <v-btn
+              @click="openResume"
               class="mt-10 text-white" 
               prepend-icon="mdi-file-pdf-box" 
               variant="tonal"
@@ -151,6 +153,9 @@ const socialLinks = ref({
   }
 })
 
+const openResume = () => {
+  window.open('src\\assets\\Thomas Eykamp CS Resume.pdf', '_blank')
+}
 </script>
 
 <style scoped>
