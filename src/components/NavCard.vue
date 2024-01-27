@@ -5,8 +5,15 @@
       style="height: 80px; background: #181818; border-bottom: 1px solid rgb(92, 92, 92);" 
       class="d-flex text-white"
     >
-      <div style=" height: 100%; width: 15%;" class="d-flex align-center justify-center">
-        <div class="text-bold" style="{ font-family: 'Playfair Display', serif; font-family: 'Young Serif', serif; }">
+      <div 
+        style=" height: 100%; width: 15%;" 
+        class="d-flex align-center justify-center"
+      >
+        <div 
+          @click="router.push({ name: 'home' })"
+          class="text-bold" 
+          style="{ font-family: 'Playfair Display', serif; font-family: 'Young Serif', serif;  cursor: pointer;}"
+        >
           <p>T<span :style="{
             'color': accentColor,
             'font-size': '20px'

@@ -67,19 +67,18 @@
                 <div>
                   <v-card-title style="font-size: 30px;">{{ project.title }}</v-card-title>
                   <v-card-subtitle>{{ project.date }}</v-card-subtitle>
-                  <v-card-text class="d-flex justify-space-between mr-2">{{ getProjectType(index) }} {{ project.description }} 
-                    <div>
-                      <v-chip 
-                        v-for="(technology) in projectData[index].technologies" 
-                        :key="index"
-                        label
-                        size="x-small"
-                        class="ml-1 mt-1"
-                      >
-                        {{ technology }}
-                      </v-chip>
-                    </div>
-                  </v-card-text>
+                  <div class="ml-3">
+                    <v-chip 
+                      v-for="(technology) in projectData[index].technologies" 
+                      :key="index"
+                      label
+                      size="x-small"
+                      class="ml-1 mt-1"
+                    >
+                      {{ technology }}
+                    </v-chip>
+                  </div>
+                  <v-card-text class="d-flex justify-space-between mr-2">{{ getProjectType(index) }} {{ project.description }} </v-card-text>
                 </div>
               </div>
             </div>
