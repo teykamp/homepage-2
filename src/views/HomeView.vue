@@ -24,6 +24,7 @@
             <v-carousel-item
               v-for="(image, index) in getProjectImages"
               :key="index"
+              @click="router.push({ name: 'work' })"
               :src="image"
               cover
             ></v-carousel-item>
@@ -170,10 +171,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { useProjectDetails, useAccentColors } from '../store/index'
 import { useDisplay } from 'vuetify'
 
 const { lgAndUp } = useDisplay()
+
+const router = useRouter()
 
 const { projectData, getProjectImages } = useProjectDetails()
 const { accentColor } = useAccentColors()
