@@ -65,7 +65,12 @@
                   }"
                 >
                 <div>
-                  <v-card-title style="font-size: 1.875rem;">{{ project.title }}</v-card-title>
+                  <v-card-title 
+                    :style="{
+                      // 'font-size': '1.875rem',
+                      'font-size': '3vh',
+                    }"
+                  >{{ project.title }}</v-card-title>
                   <v-card-subtitle>{{ project.date }}</v-card-subtitle>
                   <div class="ml-3">
                     <v-chip 
@@ -78,7 +83,12 @@
                       {{ technology }}
                     </v-chip>
                   </div>
-                  <v-card-text class="d-flex justify-space-between mr-2">{{ getProjectType(index) }} {{ project.description }} </v-card-text>
+                  <v-card-text 
+                    class="d-flex justify-space-between mr-2"
+                    :style="{
+                      'font-size': '2vh',
+                    }"
+                  >{{ getProjectType(index) }} {{ project.description }} </v-card-text>
                 </div>
               </div>
             </div>

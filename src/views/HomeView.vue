@@ -47,13 +47,15 @@
               <div
                 :style="{
                   color: 'white',
-                  'font-size': '3.125rem',
+                  // 'font-size': '3.125rem',
+                  'font-size': '5vh',
                   'margin-top': '15vh'
                 }"
               >{{ title }}</div>
               <div :style="{
                 color: 'gray',
-                'font-size': '1.875rem',
+                // 'font-size': '1.875rem',
+                'font-size': '4vh',
                 'font-style': 'italic'
               }">{{ subtitle }}</div>
           </div>

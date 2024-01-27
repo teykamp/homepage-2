@@ -20,13 +20,15 @@
               'border-left': '1px solid #5c5c5c',
               'border-bottom': '1px solid #5c5c5c',
               padding: '60px',
+              'padding-top': '2vh',
             }"
             class="d-flex justify-center"
           >
             <div style="width: 100%;">
               <v-card-text 
                 :style="{
-                  'font-size': '3.125rem',
+                  // 'font-size': '3.125rem',
+                  'font-size': '6vh',
                 }"
               >
                 {{ title }}
@@ -34,7 +36,8 @@
               <v-card-text
                 :style="{
                   color: 'gray',
-                  'font-size': '1.875rem',
+                  // 'font-size': '1.875rem',
+                  'font-size': '3vh',
                   'max-width': '70%'
                 }"
               >
@@ -44,14 +47,16 @@
               <v-card-text
                 :style="{
                   'max-width': '90%',
-                  'font-size': '1.25rem',
+                  // 'font-size': '1.25rem',
+                  'font-size': '2vh',
                 }"
               >
                 {{ body }}
               </v-card-text>
               <v-card-text
                 :style="{
-                  'font-size': '1.25rem',
+                  // 'font-size': '1.25rem',
+                  'font-size': '2vh',
                 }"
               >
                 Here are some of my technical skills:
@@ -61,22 +66,24 @@
                 <div style="color: gray">engineering skills</div>
               </div>
               <div class="d-flex justify-space-around">
-                <div style="background-color: #181818; max-height: 150px; color: white; display: flex; flex-wrap: wrap; flex-direction: column;">
+                <div style="background-color: rgba(0, 0, 0, 0); max-height: 150px; color: white; display: flex; flex-wrap: wrap; flex-direction: column;">
                   <v-list-item 
                     v-for="technology in softwareTechnologies"
                     :key="technology"
                     prepend-icon="mdi-menu-right"
                     density="compact"
+                    style="font-size: 2vh;"
                   >
                     {{ technology }}
                   </v-list-item>
                 </div>
-                <div style="background-color: #181818; max-height: 150px; color: white; display: flex; flex-wrap: wrap; flex-direction: column;">
+                <div style="background-color: rgba(0, 0, 0, 0); max-height: 150px; color: white; display: flex; flex-wrap: wrap; flex-direction: column;">
                   <v-list-item
                     v-for="technology in engineeringTechnologies"
                     :key="technology"
                     prepend-icon="mdi-menu-right"
                     density="compact"
+                    style="font-size: 2vh;"
                   >
                     {{ technology }}
                   </v-list-item>
