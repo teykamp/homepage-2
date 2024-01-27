@@ -13,8 +13,10 @@
           <!-- Instead of images could have UI test text art having different  text or something prettycolor could be from accentcolors -->
           <v-carousel 
             v-model="caroselIndex"
-            :show-arrows="false" 
+            :show-arrows="false"
+            :cycle="true" 
             hide-delimiters
+            auto
             :style="{
               height: '100%',
             }"
@@ -45,13 +47,13 @@
               <div
                 :style="{
                   color: 'white',
-                  'font-size': '50px',
+                  'font-size': '3.125rem',
                   'margin-top': '15vh'
                 }"
               >{{ title }}</div>
               <div :style="{
                 color: 'gray',
-                'font-size': '30px',
+                'font-size': '1.875rem',
                 'font-style': 'italic'
               }">{{ subtitle }}</div>
           </div>
@@ -140,14 +142,14 @@
       }">
         <v-card-text
           :style="{
-            'font-size': '30px',
+            'font-size': '1.875rem',
             color: 'white',
           }"
         >{{ title }}</v-card-text>
         <v-card-text 
           :style="{
             color: 'gray',
-            'font-size': '25px',
+            'font-size': '1.5625rem',
           }"
         >{{ subtitle }}</v-card-text>
       </div>

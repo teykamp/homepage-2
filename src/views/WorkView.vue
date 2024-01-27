@@ -65,7 +65,7 @@
                   }"
                 >
                 <div>
-                  <v-card-title style="font-size: 30px;">{{ project.title }}</v-card-title>
+                  <v-card-title style="font-size: 1.875rem;">{{ project.title }}</v-card-title>
                   <v-card-subtitle>{{ project.date }}</v-card-subtitle>
                   <div class="ml-3">
                     <v-chip 
@@ -106,7 +106,7 @@
           :src="project.image"
         ></v-img>
         <!-- title on alpha .4 background on image? rest below? -->
-        <v-card-title class="text-white" style="font-size: 30px;">{{ project.title }}</v-card-title>
+        <v-card-title class="text-white" style="font-size: 1.875rem;">{{ project.title }}</v-card-title>
         <v-card-subtitle class="text-white">{{ project.date }}</v-card-subtitle>
         <v-card-text class="d-flex justify-space-between mr-2 text-white">{{ getProjectType(index) }} {{ project.description }}</v-card-text>
         <v-chip 
@@ -136,23 +136,23 @@
         background: '#181818',
       }"
     >
-      <v-btn 
-        @click="showDialog = false"
-        icon="mdi-arrow-left"
-        variant="tonal"
-        class="ma-5 rounded-lg"
-        style="color: white;"
-      ></v-btn>
       <div style="position: relative;" class="pa-10">
+        <v-btn 
+          @click="showDialog = false"
+          icon="mdi-arrow-left"
+          variant="tonal"
+          class="ma-5 rounded-lg"
+          style="color: white;"
+        ></v-btn>
         <div>
           <v-img
             :src="projectData[currentProjectDisplayIndex].image"
             style="max-height: 700px;"
           ></v-img>
           <div :style="{'margin-left': lgAndUp ? '10%' : ''}">
-            <v-card-title class="text-white" style="font-size: 30px;">{{ projectData[currentProjectDisplayIndex].title }}</v-card-title>
+            <v-card-title class="text-white" style="font-size: 1.875rem;">{{ projectData[currentProjectDisplayIndex].title }}</v-card-title>
             <v-card-text class="d-flex justify-space-between ml-4 text-white" style="max-width: 800px;">{{ projectData[currentProjectDisplayIndex].fullText }}</v-card-text>
-            <v-card-title class="text-white" style="font-size: 20px;">Challenges</v-card-title>
+            <v-card-title class="text-white" style="font-size: 1.25rem;">Challenges</v-card-title>
             <v-card-text class="d-flex justify-space-between ml-4 text-white" style="max-width: 800px;">{{ projectData[currentProjectDisplayIndex].challenges }}</v-card-text>
             
           </div>

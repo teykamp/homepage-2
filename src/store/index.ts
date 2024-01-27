@@ -47,7 +47,7 @@ export const useProjectDetails = defineStore('projectDetails', () => {
       date: '2023',
       type: ['developed'],
       technologies: ['vue', 'nodejs', 'google sheets', 'google accounts'],
-      image: 'src\\assets\\images\\colab1.svg',
+      image: 'src\\assets\\images\\colab1.png',
       supportingImages: ['src\\assets\\images\\colab2.png', ],
       fullText: 'This was a 36-hour project completed for a hackathon. It has a wide variety of features including auto-parsing and interpreting excel data, google authentication, multi-user editing, and, of course, report generation and approval processes.',
       challenges: 'The hardest part of this project for me was working with the excel spreadhseet data structures and having them interpreted regardless of the shape of the data fed into the parser.',

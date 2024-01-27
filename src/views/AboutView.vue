@@ -26,7 +26,7 @@
             <div style="width: 100%;">
               <v-card-text 
                 :style="{
-                  'font-size': '50px',
+                  'font-size': '3.125rem',
                 }"
               >
                 {{ title }}
@@ -34,7 +34,7 @@
               <v-card-text
                 :style="{
                   color: 'gray',
-                  'font-size': '30px',
+                  'font-size': '1.875rem',
                   'max-width': '70%'
                 }"
               >
@@ -44,14 +44,14 @@
               <v-card-text
                 :style="{
                   'max-width': '90%',
-                  'font-size': '20px',
+                  'font-size': '1.25rem',
                 }"
               >
                 {{ body }}
               </v-card-text>
               <v-card-text
                 :style="{
-                  'font-size': '20px',
+                  'font-size': '1.25rem',
                 }"
               >
                 Here are some of my technical skills:
@@ -93,7 +93,7 @@
     <div v-else class="mt-14 pa-6" style="position: relative;">
       <v-card-text 
         :style="{
-          'font-size': '40px',
+          'font-size': '2.5rem',
           color: 'white',
         }"
       >
@@ -102,7 +102,7 @@
       <v-card-text
         :style="{
           color: 'gray',
-          'font-size': '20px',
+          'font-size': '1.25rem',
         }"
       >
         {{ subtitle }}
@@ -110,7 +110,7 @@
       <p :style="{ color: accentColor, 'margin-left': '15px', }">_________</p>
       <v-card-text
         :style="{
-          'font-size': '15px',
+          'font-size': '0.9375rem',
           color: 'white',
         }"
       >
