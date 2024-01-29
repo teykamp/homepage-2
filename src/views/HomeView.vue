@@ -9,8 +9,6 @@
             'border-right': '1px solid #5c5c5c',
           }"
         >
-    
-          <!-- Instead of images could have UI test text art having different  text or something prettycolor could be from accentcolors -->
           <v-carousel 
             v-model="caroselIndex"
             :show-arrows="false"
@@ -39,10 +37,22 @@
           }"
         >
           <div>
-            <div style="color: white;" class="d-flex justify-center">
-              <v-icon size="x-large" icon="mdi-code-braces"></v-icon>
-              <p style="font-size: 20px;" class="mx-4">+</p>
-              <v-icon size="x-large" icon="mdi-cog-outline"></v-icon>
+            <div 
+              style="color: white;" 
+              class="d-flex justify-center"
+            >
+              <v-icon 
+                size="x-large" 
+                icon="mdi-code-braces"
+              ></v-icon>
+              <p 
+                style="font-size: 20px;" 
+                class="mx-4"
+              >+</p>
+              <v-icon 
+                size="x-large" 
+                icon="mdi-cog-outline"
+              ></v-icon>
             </div>
             <div>
               <div
@@ -53,12 +63,14 @@
                   'margin-top': '15vh'
                 }"
               >{{ title }}</div>
-              <div :style="{
-                color: 'gray',
-                // 'font-size': '1.875rem',
-                'font-size': '4vh',
-                'font-style': 'italic'
-              }">{{ subtitle }}</div>
+              <div 
+                :style="{
+                  color: 'gray',
+                  // 'font-size': '1.875rem',
+                  'font-size': '4vh',
+                  'font-style': 'italic'
+                }"
+              >{{ subtitle }}</div>
           </div>
           </div>
         </div>
@@ -78,12 +90,13 @@
         <div 
           class="d-flex align-center justify-center"
           :style="{
-          height: '100%',
-          width: '17.5%',
-          'border-left': '1px solid #5c5c5c',
-          position: 'relative',
-          overflow: 'hidden',
-        }">
+            height: '100%',
+            width: '17.5%',
+            'border-left': '1px solid #5c5c5c',
+            position: 'relative',
+            overflow: 'hidden',
+          }"
+        >
         <!-- could also turn this into a component. then could use for the 'contact me' button as well -->
           <v-icon
             @click="changeCaroselIndex(-1)"
@@ -131,18 +144,32 @@
 
     <div v-else class="mt-14 pa-4" style="position: relative; height: calc(100vh - 56px)">
 
-      <div style="color: white; margin-top: 40%;" class="d-flex justify-center">
-        <v-icon size="x-large" icon="mdi-code-braces"></v-icon>
-        <p style="font-size: 20px;" class="mx-4">+</p>
-        <v-icon size="x-large" icon="mdi-cog-outline"></v-icon>
+      <div 
+        style="color: white; margin-top: 40%;" 
+        class="d-flex justify-center"
+      >
+        <v-icon 
+          size="x-large" 
+          icon="mdi-code-braces"
+        ></v-icon>
+        <p 
+          style="font-size: 20px;" 
+          class="mx-4"
+        >+</p>
+        <v-icon 
+          size="x-large" 
+          icon="mdi-cog-outline"
+        ></v-icon>
       </div>
         
-      <div :style="{
-        position: 'absolute',
-        bottom: '10%',
-        left: '20px',
-        width: '95%',
-      }">
+      <div 
+        :style="{
+          position: 'absolute',
+          bottom: '10%',
+          left: '20px',
+          width: '95%',
+        }"
+      >
         <v-card-text
           :style="{
             'font-size': '1.875rem',
@@ -157,14 +184,16 @@
         >{{ subtitle }}</v-card-text>
       </div>
       
-      <div :style="{
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        height: '5px',
-        width: '100%',
-        background: accentColor,
-      }"></div>
+      <div 
+        :style="{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          height: '5px',
+          width: '100%',
+          background: accentColor,
+        }"
+      ></div>
     </div>
   </div>
 </template>
