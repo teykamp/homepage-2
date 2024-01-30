@@ -66,7 +66,14 @@
                 <div style="color: gray">engineering skills</div>
               </div>
               <div class="d-flex justify-space-around">
-                <div style="background-color: rgba(0, 0, 0, 0); max-height: 150px; color: white; display: flex; flex-wrap: wrap; flex-direction: column;">
+                <div :style="{
+                  'background-color': 'rgba(0, 0, 0, 0)',
+                  'max-height': '150px',
+                  color: 'white',
+                  display: 'flex',
+                  'flex-wrap': 'wrap',
+                  'flex-direction': 'column',
+                }">
                   <v-list-item 
                     v-for="technology in softwareTechnologies"
                     :key="technology"
@@ -77,7 +84,14 @@
                     {{ technology }}
                   </v-list-item>
                 </div>
-                <div style="background-color: rgba(0, 0, 0, 0); max-height: 150px; color: white; display: flex; flex-wrap: wrap; flex-direction: column;">
+                <div :style="{
+                  'background-color': 'rgba(0, 0, 0, 0)',
+                  'max-height': '150px',
+                  color: 'white',
+                  display: 'flex',
+                  'flex-wrap': 'wrap',
+                  'flex-direction': 'column',
+                }">
                   <v-list-item
                     v-for="technology in engineeringTechnologies"
                     :key="technology"
