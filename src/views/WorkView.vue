@@ -22,7 +22,8 @@
             hoverEffect: true,
             width: '100%',
           }"
-          @click="showDialog = true, currentProjectDisplayIndex = index"
+          @click="showDialog = true, 
+                  currentProjectDisplayIndex = index"
         >
           <template #content>
             <div :style="{
@@ -116,7 +117,10 @@
           :src="project.image"
         ></v-img>
         <!-- title on alpha .4 background on image? rest below? -->
-        <v-card-title class="text-white" style="font-size: 1.875rem;">{{ project.title }}</v-card-title>
+        <v-card-title
+          class="text-white" 
+          style="font-size: 1.875rem;"
+        >{{ project.title }}</v-card-title>
         <v-card-subtitle class="text-white">{{ project.date }}</v-card-subtitle>
         <v-card-text class="d-flex justify-space-between mr-2 text-white">{{ getProjectType(index) }} {{ project.description }}</v-card-text>
         <v-chip 
@@ -160,10 +164,22 @@
             style="max-height: 700px;"
           ></v-img>
           <div :style="{'margin-left': lgAndUp ? '10%' : ''}">
-            <v-card-title class="text-white" style="font-size: 1.875rem;">{{ projectData[currentProjectDisplayIndex].title }}</v-card-title>
-            <v-card-text class="d-flex justify-space-between ml-4 text-white" style="max-width: 800px;">{{ projectData[currentProjectDisplayIndex].fullText }}</v-card-text>
-            <v-card-title class="text-white" style="font-size: 1.25rem;">Challenges</v-card-title>
-            <v-card-text class="d-flex justify-space-between ml-4 text-white" style="max-width: 800px;">{{ projectData[currentProjectDisplayIndex].challenges }}</v-card-text>
+            <v-card-title 
+              class="text-white" 
+              style="font-size: 1.875rem;"
+            >{{ projectData[currentProjectDisplayIndex].title }}</v-card-title>
+            <v-card-text 
+              class="d-flex justify-space-between ml-4 text-white" 
+              style="max-width: 800px;"
+            >{{ projectData[currentProjectDisplayIndex].fullText }}</v-card-text>
+            <v-card-title 
+              class="text-white" 
+              style="font-size: 1.25rem;"
+            >Challenges</v-card-title>
+            <v-card-text 
+              class="d-flex justify-space-between ml-4 text-white" 
+              style="max-width: 800px;"
+            >{{ projectData[currentProjectDisplayIndex].challenges }}</v-card-text>
             
           </div>
           <v-img
