@@ -2,17 +2,24 @@
   <div>
     <div
       v-if="lgAndUp"
-      style="height: 80px; background: #181818; border-bottom: 1px solid rgb(92, 92, 92);" 
+      :style="{
+        height: '80px',
+        background: '#181818',
+        'border-bottom': '1px solid rgb(92, 92, 92)',
+      }" 
       class="d-flex text-white"
     >
       <div 
-        style=" height: 100%; width: 15%;" 
+        :style="{
+          height: '100%',
+          width: '15%',
+        }" 
         class="d-flex align-center justify-center"
       >
         <div 
           @click="router.push({ name: 'home' })"
           class="text-bold" 
-          style="{ font-family: 'Playfair Display', serif; font-family: 'Young Serif', serif;  cursor: pointer;}"
+          style="font-family: 'Playfair Display', serif; font-family: 'Young Serif', serif;  cursor: pointer;"
         >
           <p>T<span :style="{
             'color': accentColor,
@@ -20,7 +27,14 @@
           }">.</span> Eykamp</p>
         </div>
       </div>
-      <div style=" height: 100%; width: 50%; border-right: 1px solid #5c5c5c;" class="d-flex align-center justify-center text-uppercase">
+      <div 
+        :style="{
+          height: '100%',
+          width: '50%', 
+          'border-right': '1px solid #5c5c5c',
+        }" 
+        class="d-flex align-center justify-center text-uppercase"
+      >
         <div
           v-for="(route, index) in routes"
           :key="index"
@@ -31,7 +45,14 @@
           class="mx-10 px-10 route-text"
         > {{ route.name }}</div>
       </div>
-      <div style=" height: 100%; width: 20%; border-right: 1px solid rgb(92, 92, 92);" class="d-flex align-center justify-space-around">
+      <div 
+        :style="{
+          height: '100%',
+          width: '20%',
+          'border-right': '1px solid rgb(92, 92, 92)',
+        }" 
+        class="d-flex align-center justify-space-around"
+      >
         <v-btn
           v-for="(link, key) in socialLinks"
           :key="key"
@@ -42,7 +63,15 @@
           class="rounded-lg"
         ></v-btn>
       </div>
-      <div style=" height: 100%; width: 15%; overflow: hidden; position: relative; gap: 10px;" class="d-flex align-center justify-center">
+      <div 
+        :style="{
+          height: '100%',
+          width: '15%',
+          overflow: 'hidden',
+          position: 'relative',
+          gap: '10px',
+        }" 
+        class="d-flex align-center justify-center">
         <div
           @click="openResume"
           @mouseenter="contactMeHover = true"
@@ -74,7 +103,9 @@
           variant="text" 
           color="white"
         ></v-app-bar-nav-icon>
-         <div class="text-bold text-white ml-2" style="font-family: 'Playfair Display', serif; font-family: 'Young Serif', serif;">
+         <div 
+          class="text-bold text-white ml-2" 
+          style="font-family: 'Playfair Display', serif; font-family: 'Young Serif', serif;">
             <p>T<span :style="{
               'color': accentColor,
               'font-size': '20px'
